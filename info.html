@@ -18,6 +18,26 @@
             text-align: center;
             margin-top: 1%;
         }
+        .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        height: 100px;
+        width: 100px;
+        outline: black;
+        background-size: 100%, 100%;
+      }
+
+      .carousel-control-next-icon:after
+      {
+        content: '>';
+        font-size: 55px;
+        color: black;
+      }
+
+      .carousel-control-prev-icon:after {
+        content: '<';
+        font-size: 55px;
+        color: black;
+      }
 
         
     </style>
@@ -81,13 +101,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="http://localhost//Shivoham/Images/Screenshot%20(513).png" alt="First slide">
+            <img class="d-block w-100" src="./Images/English.png" alt="English Instructions">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="http://localhost//Shivoham/Images/Screenshot%20(514).png" alt="Second slide">
+            <img class="d-block w-100" src="./Images/Marathi.png" alt="Marathi Instructions">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="http://localhost//Shivoham/Images/Screenshot%20(515).png" alt="Third slide">
+            <img class="d-block w-100" src="./Images/Hindi.png" alt="Hindi Instructions">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
