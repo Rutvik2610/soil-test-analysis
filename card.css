@@ -37,12 +37,26 @@ a {
     padding-top: 13px;
     text-align: center;
   }
-  #signup {
+  #farmersignup {
     color: #2dbd6e;
     font-family: "Raleway", sans-serif;
     font-size: 10pt;
     margin-top: 16px;
-    text-align: center;
+    display: inline;
+    position: absolute;
+    left: 48%;
+    top: 48%;
+   
+  }
+  #labsignup {
+    color: #2dbd6e;
+    font-family: "Raleway", sans-serif;
+    font-size: 10pt;
+    margin-top: 16px;
+    display: inline;
+    position: absolute;
+    left: 53%;
+    top: 48%;
   }
   #submit-btn {
     background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
