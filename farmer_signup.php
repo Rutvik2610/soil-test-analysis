@@ -1,3 +1,44 @@
+<?php
+require_once "pdo.php";
+session_start();
+
+if ( isset($_POST['submit'])) {
+    //Data Validation
+    if ( strlen($_POST['name']) < 1 || strlen($_POST['aadhaar']) != 12 || strlen($_POST['address']) < 1
+         || strlen($_POST['acres']) < 1 || strlen($_POST['contact']) != 10 ) {
+        $_SESSION['error'] = 'Please enter correct details.';
+        header("Location: http://localhost/Shivoham/farmer_signup.php");
+        return;
+        }
+    if ( strpos($_POST['email'],'@') === false ) {
+        $_SESSION['error'] = 'Please enter a valid email id.';
+        header("Location: http://localhost/Shivoham/farmer_signup.php");
+        return;
+        }
+
+    $sql = "INSERT INTO farmers (aadhaar_no, farmer_name, address, acres, contact, email, fpassword)
+            VALUES (:aadhaar, :name, :address, :acres, :contact, :email, :password)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(
+            ':aadhaar' => $_POST['aadhaar'] + 0,
+            ':name' => $_POST['name'],
+            ':address' => $_POST['address'],
+            ':acres' => $_POST['acres'] + 0.0,
+            ':contact' => $_POST['contact'] + 0,
+            ':email' => $_POST['email'],
+            ':password' => $_POST['password']));
+        $_SESSION['success'] = "Account created Successfully.\nLogin to continue.";
+        header('Location: http://localhost/Shivoham/farmer_login.php');
+        return;
+}
+
+// Flash pattern
+if ( isset($_SESSION['error']) ) {
+    echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+    unset($_SESSION['error']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,11 +76,11 @@
             <label for="user-email" style="padding-top:13px">
                 &nbsp;Name
               </label>
-            <input id="user-email" class="form-content" type="text" name="email" autocomplete="on" required />
+            <input id="user-email" class="form-content" type="text" name="name" autocomplete="on" required />
             <div class="form-border"></div>
-            <label for="user-password" style="padding-top:22px">&nbsp;ID
+            <label for="user-password" style="padding-top:22px">&nbsp;Aadhaar No
               </label>
-            <input id="user-password" class="form-content" type="text" name="password" required />
+            <input id="user-password" class="form-content" type="text" name="aadhaar" required />
             <div class="form-border"></div>
             <label for="user-password" style="padding-top:22px">&nbsp;Address
             </label>
