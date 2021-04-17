@@ -1,0 +1,40 @@
+SQL Commands Used:
+
+CREATE DATABASE soil_analysis;
+GRANT ALL ON soil_analysis.* TO 'soil'@'localhost' IDENTIFIED BY 'grp10';
+GRANT ALL ON soil_analysis.* TO 'soil'@'127.0.0.1' IDENTIFIED BY 'grp10';
+
+CREATE TABLE farmers (
+	aadhaar_no INT(12) NOT NULL PRIMARY KEY,
+    farmer_name VARCHAR(128) NOT NULL,
+    address VARCHAR(128),
+    acres DECIMAL(2,2),
+    contact INT(10),
+    email VARCHAR(50) NOT NULL,
+    fpassword VARCHAR(24)NOT NULL 
+);
+
+CREATE TABLE lab (
+    email VARCHAR(128) NOT NULL PRIMARY KEY,
+	emp_name VARCHAR(128) NOT NULL,
+    lpassword VARCHAR(24) NOT NULL
+);
+
+CREATE TABLE report (
+    report_id INT(6) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ph INT(2) NOT NULL,
+    nitrogen DECIMAL(1,1) NOT NULL,
+    phosphorus DECIMAL(2,2) NOT NULL,
+    pottasium DECIMAL(2,2) NOT NULL,
+    calcium DECIMAL(2,2) NOT NULL,
+    magnesium DECIMAL(2,2) NOT NULL,
+    salinity DECIMAL(2,2) NOT NULL,
+    zinc INT(3) NOT NULL,
+    iron INT(3) NOT NULL,
+    manganese INT(3) NOT NULL,
+    copper DECIMAL(2,1) NOT NULL,
+    sodium DECIMAL(1,1) NOT NULL,
+    farmer_name VARCHAR(128) NOT NULL,
+    aadhaar_no INT(12),
+    FOREIGN KEY (aadhaar_no) REFERENCES farmers(aadhaar_no)
+);
