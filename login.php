@@ -107,7 +107,9 @@
           <form method="post" class="form">
             <input id="farmer-btn" type="submit" name="login" value="FARMER" />
             <input id="lab-btn" type="submit" name="login" value="LAB" />
-            <a href="http://localhost/Shivoham/signup" id="signup">Don't have account yet?</a>
+            <p>Don't have an account yet?</p>
+            <a href="" id="farmersignup">Farmer</a>
+            <a href="" id="labsignup">Lab</a>
           </form>
         </div>
       </div>
