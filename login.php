@@ -108,8 +108,8 @@
             <input id="farmer-btn" type="submit" name="login" value="FARMER" />
             <input id="lab-btn" type="submit" name="login" value="LAB" />
             <p>Don't have an account yet?</p>
-            <a href="" id="farmersignup">Farmer</a>
-            <a href="" id="labsignup">Lab</a>
+            <a href="http://localhost/Shivoham/farmer_signup.php" id="farmersignup">Farmer</a>
+            <a href="http://localhost/Shivoham/lab_signup.php" id="labsignup">Lab</a>
           </form>
         </div>
       </div>
