@@ -88,10 +88,10 @@
                   <a class="nav-link" href="http://localhost/Shivoham/info.html">INFO</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/sample.html">SUBMIT SAMPLE</a>
+                  <a class="nav-link" href="http://localhost/Shivoham/sample.php">SUBMIT SAMPLE</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/login.html">LOGIN</a>
+                  <a class="nav-link" href="http://localhost/Shivoham/login.php">LOGIN</a>
               </li>
               </ul>
           </div>
