@@ -1,3 +1,14 @@
+<?php
+    if ( isset($_POST['login']) ) {
+        if ( $_POST['login'] == 'FARMER' ) {
+            header("Location: http://localhost/Shivoham/farmer_login.php");
+            return;
+        } else if ( $_POST['login'] == 'LAB' ) {
+            header("Location: http://localhost/Shivoham/lab_login.php");
+            return;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,8 +105,8 @@
             <div class="underline-title"></div>
           </div>
           <form method="post" class="form">
-            <input id="farmer-btn" type="submit" name="submit" value="FARMER" />
-            <input id="lab-btn" type="submit" name="submit" value="LAB" />
+            <input id="farmer-btn" type="submit" name="login" value="FARMER" />
+            <input id="lab-btn" type="submit" name="login" value="LAB" />
             <a href="http://localhost/Shivoham/signup" id="signup">Don't have account yet?</a>
           </form>
         </div>
