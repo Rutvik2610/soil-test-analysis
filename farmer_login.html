@@ -1,3 +1,8 @@
+<?php
+require_once "pdo.php";
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +15,19 @@
 </head>
 
 <body>
+  
+  <!-- Flash pattern -->
+  <?php
+  if ( isset($_SESSION['error']) ) {
+      echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+      unset($_SESSION['error']);
+  }
+  if ( isset($_SESSION['success']) ) {
+      echo '<p style="color:blue">'.$_SESSION['success']."</p>\n";
+      unset($_SESSION['success']);
+  }
+  ?>
+  
   <div id="card">
     <div id="card-content">
       <div id="card-title">
@@ -30,7 +48,7 @@
           <legend id="forgot-pass">Forgot password?</legend>
         </a>
         <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
-        <a href="http://localhost/Shivoham/farmer_signup" id="signup">Don't have account yet?</a>
+        <a href="http://localhost/Shivoham/farmer_signup.php" id="signup">Don't have account yet?</a>
       </form>
     </div>
   </div>
