@@ -70,7 +70,7 @@ if ( isset($_SESSION['error']) ) {
               </label>
             <input id="user-password" class="form-content" type="password" name="password" required />
             <div class="form-border"></div>
-            <input id="submit-btn" type="submit" name="submit" value="SIGNUP" />
+            <input id="submit-btn" type="submit" name="submit" value="SIGN UP" />
             <a href="http://localhost/Shivoham/lab_login.php" id="signup">Already have an account? Login</a>
           </form>
         </div>
