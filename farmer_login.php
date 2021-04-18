@@ -1,6 +1,26 @@
 <?php
 require_once "pdo.php";
 session_start();
+
+if ( isset($_POST['email']) && isset($_POST['password'])){
+    $sql = "SELECT * FROM farmers WHERE email = :email AND fpassword = :password";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+            ':email' => $_POST['email'],
+            ':password' => $_POST['password']));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row === FALSE){
+            $_SESSION['error'] = 'Incorrect email id or password.';
+            header('Location: http://localhost/Shivoham/farmer_login.php');
+            return;
+        }
+        $_SESSION['success'] = 'Login Successful.';
+        $_SESSION['user_id'] = $row['aadhaar_no'];
+        $_SESSION['name'] = $row['farmer_name'];
+        header('Location: http://localhost/Shivoham/farmer_home.php');
+        return;
+}
+
 ?>
 
 <!DOCTYPE html>
