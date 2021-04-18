@@ -1,3 +1,8 @@
+<?php
+require_once "pdo.php";
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,15 +57,27 @@
                   <a class="nav-link" href="http://localhost/Shivoham/info.html">INFO</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/sample.html">SUBMIT SAMPLE</a>
+                  <a class="nav-link" href="">VIEW REPORT</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/login.html">LOGIN</a>
+                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGIN</a>
               </li>
               </ul>
           </div>
           </nav>
       </section>
+    
+      <!-- Flash pattern -->
+      <?php
+      if ( isset($_SESSION['error']) ) {
+          echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+          unset($_SESSION['error']);
+      }
+      if ( isset($_SESSION['success']) ) {
+          echo '<p style="color:blue">'.$_SESSION['success']."</p>\n";
+          unset($_SESSION['success']);
+      }
+      ?>
 
       <div class="content" >
         <div class="slogan">
