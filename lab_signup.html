@@ -1,3 +1,39 @@
+<?php
+require_once "pdo.php";
+session_start();
+
+if ( isset($_POST['submit'])){
+    //Data Validation
+    if ( strlen($_POST['name']) < 1 || strlen($_POST['password']) < 1){
+       $_SESSION['error'] = 'Please enter correct details.';
+       header("Location: http://localhost/Shivoham/lab_signup.php");
+       return;
+       }
+    if ( strpos($_POST['email'],'@') === false ) {
+        $_SESSION['error'] = 'Please enter a valid email id.';
+        header("Location: http://localhost/Shivoham/lab_signup.php");
+        return;
+        }
+    $sql = "INSERT INTO lab (email, emp_name, lpassword)
+            VALUES (:email, :name, :password)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+              ':email' => $_POST['email'],
+              ':name' => $_POST['name'],
+              ':password' => $_POST['password']));
+            $_SESSION['success'] = "Account created Successfully.\nLogin to continue.";
+            header('Location: http://localhost/Shivoham/lab_login.php');
+            return;
+}
+
+// Flash pattern
+if ( isset($_SESSION['error']) ) {
+    echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+    unset($_SESSION['error']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +71,7 @@
             <input id="user-password" class="form-content" type="password" name="password" required />
             <div class="form-border"></div>
             <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
-            <a href="http://localhost/Shivoham/signup" id="signup">Don't have account yet?</a>
+            <a href="http://localhost/Shivoham/lab_login.php" id="signup">Already have an account? Login</a>
           </form>
         </div>
       </div>
