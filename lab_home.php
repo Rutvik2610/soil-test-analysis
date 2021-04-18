@@ -1,3 +1,8 @@
+<?php
+require_once "pdo.php";
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +46,7 @@
 
     <section id = "nav-bar">
         <nav class="navbar navbar-expand-lg navbar-custom">
-          <a class="navbar-brand">WELCOME *fetch name here</a>
+          <a class="navbar-brand">WELCOME <?php echo(htmlentities($_SESSION['name'])); ?> </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,10 +58,25 @@
               <li class="nav-item">
                   <a class="nav-link" href="http://localhost/Shivoham/info.html">VIEW SAMPLES</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGOUT</a>
+              </li>
               </ul>
           </div>
           </nav>
       </section>
+
+     <!-- Flash pattern -->
+      <?php
+      if ( isset($_SESSION['error']) ) {
+          echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
+          unset($_SESSION['error']);
+      }
+      if ( isset($_SESSION['success']) ) {
+          echo '<p style="color:blue">'.$_SESSION['success']."</p>\n";
+          unset($_SESSION['success']);
+      }
+      ?>
 
       <div class="content" >
         <div class="slogan">
