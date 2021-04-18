@@ -105,6 +105,8 @@ if ( isset($_SESSION['error']) ) {
         <div class="form-border"></div>
 
             <input id="submit-btn" type="submit" name="submit" value="SIGN UP" />
+            <a href="http://localhost/Shivoham/farmer_login.php" id="signup">Already have an Account? Login</a>
+
           </form>
         </div>
       </div>
