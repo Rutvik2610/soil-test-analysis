@@ -6,12 +6,12 @@ if ( isset($_POST['submit'])){
     //Data Validation
     if ( strlen($_POST['name']) < 1 || strlen($_POST['password']) < 1){
        $_SESSION['error'] = 'Please enter correct details.';
-       header("Location: http://localhost/Shivoham/lab_signup.php");
+       header("Location: http://localhost/soil-test-analysis/lab_signup.php");
        return;
        }
     if ( strpos($_POST['email'],'@') === false ) {
         $_SESSION['error'] = 'Please enter a valid email id.';
-        header("Location: http://localhost/Shivoham/lab_signup.php");
+        header("Location: http://localhost/soil-test-analysis/lab_signup.php");
         return;
         }
     $sql = "INSERT INTO lab (email, emp_name, lpassword)
@@ -22,7 +22,7 @@ if ( isset($_POST['submit'])){
               ':name' => $_POST['name'],
               ':password' => $_POST['password']));
             $_SESSION['success'] = "Account created Successfully.\nLogin to continue.";
-            header('Location: http://localhost/Shivoham/lab_login.php');
+            header('Location: http://localhost/soil-test-analysis/lab_login.php');
             return;
 }
 
@@ -71,7 +71,7 @@ if ( isset($_SESSION['error']) ) {
             <input id="user-password" class="form-content" type="password" name="password" required />
             <div class="form-border"></div>
             <input id="submit-btn" type="submit" name="submit" value="SIGN UP" />
-            <a href="http://localhost/Shivoham/lab_login.php" id="signup">Already have an account? Login</a>
+            <a href="http://localhost/soil-test-analysis/lab_login.php" id="signup">Already have an account? Login</a>
           </form>
         </div>
       </div>

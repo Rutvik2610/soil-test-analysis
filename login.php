@@ -1,10 +1,10 @@
 <?php
     if ( isset($_POST['login']) ) {
         if ( $_POST['login'] == 'FARMER' ) {
-            header("Location: http://localhost/Shivoham/farmer_login.php");
+            header("Location: http://localhost/soil-test-analysis/farmer_login.php");
             return;
         } else if ( $_POST['login'] == 'LAB' ) {
-            header("Location: http://localhost/Shivoham/lab_login.php");
+            header("Location: http://localhost/soil-test-analysis/lab_login.php");
             return;
         }
     }
@@ -82,16 +82,16 @@
           <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost//Shivoham/Bank.html">HOME</a>
+                  <a class="nav-link" href="http://localhost//soil-test-analysis/Bank.html">HOME</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/info.html">INFO</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/info.html">INFO</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/sample.php">SUBMIT SAMPLE</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/sample.php">SUBMIT SAMPLE</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/login.php">LOGIN</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/login.php">LOGIN</a>
               </li>
               </ul>
           </div>
@@ -108,8 +108,8 @@
             <input id="farmer-btn" type="submit" name="login" value="FARMER" />
             <input id="lab-btn" type="submit" name="login" value="LAB" />
             <p>Don't have an account yet?</p>
-            <a href="http://localhost/Shivoham/farmer_signup.php" id="farmersignup">Farmer</a>
-            <a href="http://localhost/Shivoham/lab_signup.php" id="labsignup">Lab</a>
+            <a href="http://localhost/soil-test-analysis/farmer_signup.php" id="farmersignup">Farmer</a>
+            <a href="http://localhost/soil-test-analysis/lab_signup.php" id="labsignup">Lab</a>
           </form>
         </div>
       </div>

@@ -1,6 +1,25 @@
 <?php
 require_once "pdo.php";
 session_start();
+
+if ( isset($_POST['email']) && isset($_POST['password'])){
+  $sql = "SELECT * FROM lab WHERE email = :email AND lpassword = :password";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(array(
+          ':email' => $_POST['email'],
+          ':password' => $_POST['password']));
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      if($row === FALSE){
+          $_SESSION['error'] = 'Incorrect email id or password.';
+          header('Location: http://localhost/soil-test-analysis/lab_login.php');
+          return;
+      }
+      $_SESSION['success'] = 'Login Successful.';
+      $_SESSION['user_id'] = $row['email'];
+      $_SESSION['name'] = $row['emp_name'];
+      header('Location: http://localhost/soil-test-analysis/lab_home.php');
+      return;
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +72,7 @@ session_start();
           <legend id="forgot-pass">Forgot password?</legend>
         </a>
         <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
-        <a href="http://localhost/Shivoham/lab_signup.php" id="signup">Don't have account yet?</a>
+        <a href="http://localhost/soil-test-analysis/lab_signup.php" id="signup">Don't have account yet?</a>
       </form>
     </div>
   </div>

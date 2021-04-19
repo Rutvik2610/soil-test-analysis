@@ -7,12 +7,12 @@ if ( isset($_POST['submit'])) {
     if ( strlen($_POST['name']) < 1 || strlen($_POST['aadhaar']) != 12 || strlen($_POST['address']) < 1
          || strlen($_POST['acres']) < 1 || strlen($_POST['contact']) != 10 ) {
         $_SESSION['error'] = 'Please enter correct details.';
-        header("Location: http://localhost/Shivoham/farmer_signup.php");
+        header("Location: http://localhost/soil-test-analysis/farmer_signup.php");
         return;
         }
     if ( strpos($_POST['email'],'@') === false ) {
         $_SESSION['error'] = 'Please enter a valid email id.';
-        header("Location: http://localhost/Shivoham/farmer_signup.php");
+        header("Location: http://localhost/soil-test-analysis/farmer_signup.php");
         return;
         }
 
@@ -28,7 +28,7 @@ if ( isset($_POST['submit'])) {
             ':email' => $_POST['email'],
             ':password' => $_POST['password']));
         $_SESSION['success'] = "Account created Successfully.\nLogin to continue.";
-        header('Location: http://localhost/Shivoham/farmer_login.php');
+        header('Location: http://localhost/soil-test-analysis/farmer_login.php');
         return;
 }
 
@@ -105,7 +105,7 @@ if ( isset($_SESSION['error']) ) {
         <div class="form-border"></div>
 
             <input id="submit-btn" type="submit" name="submit" value="SIGN UP" />
-            <a href="http://localhost/Shivoham/farmer_login.php" id="signup">Already have an Account? Login</a>
+            <a href="http://localhost/soil-test-analysis/farmer_login.php" id="signup">Already have an Account? Login</a>
 
           </form>
         </div>

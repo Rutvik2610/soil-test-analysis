@@ -44,23 +44,23 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <section id = "nav-bar">
         <nav class="navbar navbar-expand-lg navbar-custom">
-          <a class="navbar-brand">SOIL TEST</a>
+          <a class="navbar-brand">SOIL TEST WELCOME</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost//Shivoham/Bank.html">HOME</a>
+                  <a class="nav-link" href="http://localhost//soil-test-analysis/Bank.html">HOME</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/info.html">INFO</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/info.html">INFO</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="">VIEW REPORT</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGIN</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/logout.php">LOGIN</a>
               </li>
               </ul>
           </div>
