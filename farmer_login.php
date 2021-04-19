@@ -11,13 +11,13 @@ if ( isset($_POST['email']) && isset($_POST['password'])){
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if($row === FALSE){
             $_SESSION['error'] = 'Incorrect email id or password.';
-            header('Location: http://localhost/Shivoham/farmer_login.php');
+            header('Location: http://localhost/soil-test-analysis/farmer_login.php');
             return;
         }
         $_SESSION['success'] = 'Login Successful.';
         $_SESSION['user_id'] = $row['aadhaar_no'];
         $_SESSION['name'] = $row['farmer_name'];
-        header('Location: http://localhost/Shivoham/farmer_home.php');
+        header('Location: http://localhost/soil-test-analysis/farmer_home.php');
         return;
 }
 
@@ -68,7 +68,7 @@ if ( isset($_POST['email']) && isset($_POST['password'])){
           <legend id="forgot-pass">Forgot password?</legend>
         </a>
         <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
-        <a href="http://localhost/Shivoham/farmer_signup.php" id="signup">Don't have account yet?</a>
+        <a href="http://localhost/soil-test-analysis/farmer_signup.php" id="signup">Don't have account yet?</a>
       </form>
     </div>
   </div>

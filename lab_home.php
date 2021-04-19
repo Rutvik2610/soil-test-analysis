@@ -53,13 +53,13 @@ session_start();
           <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost//Shivoham/Bank.html">HOME</a>
+                  <a class="nav-link" href="http://localhost//soil-test-analysis/lab_home.php">HOME</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/info.html">VIEW SAMPLES</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/report.php">SUBMIT SAMPLES</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGOUT</a>
+                  <a class="nav-link" href="http://localhost/soil-test-analysis/logout.php">LOGOUT</a>
               </li>
               </ul>
           </div>
