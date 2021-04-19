@@ -60,7 +60,7 @@ session_start();
                   <a class="nav-link" href="">VIEW REPORT</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGIN</a>
+                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGOUT</a>
               </li>
               </ul>
           </div>
