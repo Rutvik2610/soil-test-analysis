@@ -60,7 +60,11 @@ session_start();
                   <a class="nav-link" href="">VIEW REPORT</a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                   <a class="nav-link" href="http://localhost/soil-test-analysis/logout.php">LOGIN</a>
+=======
+                  <a class="nav-link" href="http://localhost/Shivoham/logout.php">LOGOUT</a>
+>>>>>>> de7d66447b9c6916eb2b72e2d8e3e79b3d4eb3f2
               </li>
               </ul>
           </div>

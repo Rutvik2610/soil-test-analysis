@@ -3,6 +3,7 @@ require_once "pdo.php";
 session_start();
 
 if ( isset($_POST['email']) && isset($_POST['password'])){
+<<<<<<< HEAD
   $sql = "SELECT * FROM lab WHERE email = :email AND lpassword = :password";
   $stmt = $pdo->prepare($sql);
   $stmt->execute(array(
@@ -19,6 +20,25 @@ if ( isset($_POST['email']) && isset($_POST['password'])){
       $_SESSION['name'] = $row['emp_name'];
       header('Location: http://localhost/soil-test-analysis/lab_home.php');
       return;
+=======
+    $sql = "SELECT * FROM lab WHERE email = :email AND lpassword = :password";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+            ':email' => $_POST['email'],
+            ':password' => $_POST['password']));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row === FALSE){
+            $_SESSION['error'] = 'Incorrect email id or password.';
+            header('Location: http://localhost/Shivoham/lab_login.php');
+            return;
+        }
+        $_SESSION['success'] = 'Login Successful.';
+        $_SESSION['user_id'] = $row['email'];
+        $_SESSION['name'] = $row['emp_name'];
+        header('Location: http://localhost/Shivoham/lab_home.php');
+        return;
+
+>>>>>>> de7d66447b9c6916eb2b72e2d8e3e79b3d4eb3f2
 }
 ?>
 
